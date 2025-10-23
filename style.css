@@ -1,0 +1,117 @@
+/* === Reset básico */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* === fundo gerl da página ===*/
+
+body {
+    background-color: linear-gradient(135deg, #1a1a1a, #333);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}   
+
+/* === título da calculadora ===*/
+
+.box-buttons {
+    background: #222;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    display: grid;
+    grid-template-columns: repeat(4, 80px);
+    gap: 10px;
+    justify-content: center;
+
+}
+
+/* === Display (onde aparece o resultado) ===*/
+
+#display {
+    grid-column: span 4; /*ocupa as 4 colunas da grid*/
+    height: 60px;
+    font-size:2em ;
+    text-align: right ;
+    padding:10px ;
+    border: none;
+    border-radius:10px ;
+    background-color:#000 ;
+    color: #00ff99; 
+    box-shadow: inset 0 0 10px #00ff99;
+}
+
+/* === estilo gerais dos botões === */
+
+button {
+    height: 60px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    background-color: #444;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0.4px #333;
+}
+
+/* === efeito ao passar com o mouse*/
+
+button:hover {
+    background-color: #555;
+}
+
+/* === efeito ao clicar com o botão*/
+
+button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px #222;
+}
+
+/* === Botões especiais (opcionais, se quiser destacar alguns) === */
+button:nth-child(2) {
+  /* Botão "C" */
+  background-color: #e63946;
+}
+
+button:nth-child(2):hover {
+  background-color: #ff4d5a;
+}
+
+button:nth-last-child(1) {
+  /* Botão "=" */
+  background-color: #00ff99;
+  color: #000;
+  grid-column: span 2; /* Faz o botão "=" ficar maior */
+}
+
+button:nth-last-child(1):hover {
+  background-color: #00ffaa;
+}
+
+/* === Responsividade (ajuste no celular) === */
+@media (max-width: 500px) {
+  .box-buttons {
+    grid-template-columns: repeat(4, 60px);
+    gap: 8px;
+    padding: 15px;
+  }
+
+  #display {
+    height: 50px;
+    font-size: 1.5em;
+  }
+
+  button {
+    height: 50px;
+    font-size: 1.2em;
+  }
+}
