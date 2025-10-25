@@ -3,31 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>Calculadora</title>
   </head>
+
   <body>
     <h1>Calculadora em JS</h1>
+
     <div class="box-buttons">
-      <input type="text" disabled id="display" />
-      <button>C</button>
-      <button></button>
-      <button>/</button>
-      <button>*</button>
-      <button>7</button>
-      <button>8</button>
-      <button>9</button>
-      <button>-</button>
-      <button>4</button>
-      <button>5</button>
-      <button>6</button>
-      <button>+</button>
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
-      <button>0</button>
-      <button>.</button>
-      <button>=</button>
+      <!-- Display onde aparece o cálculo -->
+      <input type="text" id="display" disabled />
+
+      <!-- Linha dos botões -->
+      <button onclick="clean()">C</button>
+      <button onclick="backspace()"><</button>
+      <button onclick="insertToDisplay('/')">/</button>
+      <button onclick="insertToDisplay('*')">*</button>
+
+      <button onclick="insertToDisplay('7')">7</button>
+      <button onclick="insertToDisplay('8')">8</button>
+      <button onclick="insertToDisplay('9')">9</button>
+      <button onclick="insertToDisplay('-')">-</button>
+
+      <button onclick="insertToDisplay('4')">4</button>
+      <button onclick="insertToDisplay('5')">5</button>
+      <button onclick="insertToDisplay('6')">6</button>
+      <button onclick="insertToDisplay('+')">+</button>
+
+      <button onclick="insertToDisplay('1')">1</button>
+      <button onclick="insertToDisplay('2')">2</button>
+      <button onclick="insertToDisplay('3')">3</button>
+      <button onclick="insertToDisplay('0')">0</button>
+      <button onclick="insertToDisplay('.')">.</button>
+
+      <!-- Botão "=" agora chama calculate() -->
+      <button onclick="calculate()">=</button>
     </div>
+
+    <!-- Importa o arquivo JavaScript -->
+    <script src="script.js"></script>
   </body>
 </html>
